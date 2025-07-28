@@ -7,29 +7,29 @@ To start your Phoenix server:
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+## Ash
 
-## Project Setup
+- Domain List: [lib/todos/list.ex](lib/todos/list.ex)
+- Resource Todo: [lib/todos/todo.ex](lib/todos/todo.ex)
+- Seed: [lib/todos/seed.ex](lib/todos/seed.ex)
 
-```sh
-# new phoenix project
-mix phx.new todos
-cd todos
+## Hologram
 
-# install ash
-mix igniter.install ash ash_phoenix ash_postgres --yes
-mix ash.setup
+- HomePage: [lib/todos_holo/home_page.ex](lib/todos_holo/home_page.ex)
+- AddTodo: [lib/todos_holo/components/add_todo.ex](lib/todos_holo/components/add_todo.ex)
+- TodoCheckbox: [lib/todos_holo/components/cleanup_todos.ex](lib/todos_holo/components/cleanup_todos.ex)
+- CleanupTodos: [lib/todos_holo/components/todo_checkbox.ex](lib/todos_holo/components/todo_checkbox.ex)
 
-# install hologram
-```
+### Questions
+
+- How do I clear the input value after the `:add_todo` event?
+- Is there a way to make the `<input checked={boolean}>` work?
+- The event of `<input type="checkbox">` always has `value: "on"`?
+- Event type [`input`](https://developer.mozilla.org/en-US/docs/Web/API/Element/input_event) seems missing at the moment?
 
 ## Learn more
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+  * Elixir: https://elixir-lang.org/docs.html
+  * Phoenix: https://hexdocs.pm/phoenix/overview.html
   * Ash: https://hexdocs.pm/ash/readme.html
-  * Ash Postgres: https://hexdocs.pm/ash_postgres/readme.html
   * Hologram: https://hologram.page/
