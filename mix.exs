@@ -10,7 +10,8 @@ defmodule Todos.MixProject do
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
-      consolidate_protocols: Mix.env() != :dev
+      consolidate_protocols: Mix.env() != :dev,
+      compilers: Mix.compilers() ++ [:hologram]
     ]
   end
 
@@ -34,15 +35,15 @@ defmodule Todos.MixProject do
   defp deps do
     [
       {:sourceror, "~> 1.8", only: [:dev, :test]},
-      {:ash_admin, "~> 0.13"},
-      {:ash_postgres, "~> 2.0"},
+      # {:ash_admin, "~> 0.13"},
+      # {:ash_postgres, "~> 2.0"},
       {:ash_phoenix, "~> 2.0"},
       {:ash, "~> 3.0"},
       {:igniter, "~> 0.6", only: [:dev, :test]},
       {:phoenix, "~> 1.7.21"},
-      {:phoenix_ecto, "~> 4.5"},
-      {:ecto_sql, "~> 3.10"},
-      {:postgrex, ">= 0.0.0"},
+      # {:phoenix_ecto, "~> 4.5"},
+      # {:ecto_sql, "~> 3.10"},
+      # {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:phoenix_live_view, "~> 1.0"},
@@ -64,7 +65,8 @@ defmodule Todos.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:hologram, "~> 0.5.0"}
     ]
   end
 

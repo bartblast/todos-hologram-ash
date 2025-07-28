@@ -3,3 +3,15 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+
+.done {
+  text-decoration: line-through;
+}
+
+.button {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.button-destroy {
+  @apply bg-red-500 text-white font-bold py-2 px-4 rounded;
+}

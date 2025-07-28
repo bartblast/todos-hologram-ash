@@ -37,3 +37,6 @@ npm-debug.log
 
 # Ignore ElixirLS files.
 /.elixir_ls
+
+# Hologram generated JavaScript bundles.
+/priv/static/hologram/

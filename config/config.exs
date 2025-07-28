@@ -18,6 +18,8 @@ config :ash,
   read_action_after_action_hooks_in_order?: true,
   bulk_actions_default_to_errors?: true
 
+config :todos, ash_domains: [Todos.List]
+
 config :spark,
   formatter: [
     remove_parens?: true,
@@ -43,9 +45,9 @@ config :spark,
     "Ash.Domain": [section_order: [:resources, :policies, :authorization, :domain, :execution]]
   ]
 
-config :todos,
-  ecto_repos: [Todos.Repo],
-  generators: [timestamp_type: :utc_datetime]
+# config :todos,
+#   ecto_repos: [Todos.Repo],
+#   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
 config :todos, TodosWeb.Endpoint,

@@ -23,7 +23,7 @@ defmodule TodosWeb.Endpoint do
     at: "/",
     from: :todos,
     gzip: false,
-    only: TodosWeb.static_paths()
+    only: ["hologram" | TodosWeb.static_paths()]
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
@@ -32,7 +32,7 @@ defmodule TodosWeb.Endpoint do
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
     plug AshPhoenix.Plug.CheckCodegenStatus
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :todos
+    # plug Phoenix.Ecto.CheckRepoStatus, otp_app: :todos
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -50,5 +50,6 @@ defmodule TodosWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug Hologram.Router
   plug TodosWeb.Router
 end
