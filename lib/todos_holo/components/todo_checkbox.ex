@@ -29,7 +29,7 @@ defmodule TodosHolo.Components.TodoCheckbox do
       Todos.List.set_undone!(params.todo.id)
     end
 
-    server
+    put_action(server, name: :reload_page, target: "page")
   end
   
   defp class(true), do: "done"
