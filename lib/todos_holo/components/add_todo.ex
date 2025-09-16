@@ -16,7 +16,6 @@ defmodule TodosHolo.Components.AddTodo do
 
   def command(:add_todo, %{event: %{"title" => title}}, server) do
     Todos.List.create_todo!(title)    
-    # server
     put_action(server, name: :reload_page, target: "page")
   end
 end

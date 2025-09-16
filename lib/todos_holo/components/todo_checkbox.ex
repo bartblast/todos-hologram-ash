@@ -19,10 +19,10 @@ defmodule TodosHolo.Components.TodoCheckbox do
   def action(:toggle_done, %{event: %{value: value}}, component) do
     component
     |> put_state([:todo, :done], value)
-    |> put_command(:save_todo, todo: component.state.todo)
+    |> put_command(:toggle_done, todo: component.state.todo)
   end
 
-  def command(:save_todo, params, server) do
+  def command(:toggle_done, params, server) do
     if params.todo.done do
       Todos.List.set_done!(params.todo.id)
     else
