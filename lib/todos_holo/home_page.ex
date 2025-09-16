@@ -30,4 +30,8 @@ defmodule TodosHolo.HomePage do
     <CleanupTodos cid="cleanup_todos" />
     """
   end
+  
+  def action(:reload_page, _params, component) do
+    put_page(component, __MODULE__)
+  end
 end
